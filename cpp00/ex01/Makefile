@@ -5,20 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: zchbani <zchbani@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/11 09:07:51 by zchbani           #+#    #+#              #
-#    Updated: 2022/05/11 10:01:22 by zchbani          ###   ########.fr        #
+#    Created: 2022/05/11 09:57:49 by zchbani           #+#    #+#              #
+#    Updated: 2022/05/11 09:58:33 by zchbani          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC				= clang++
+CC				= g++
 
 RM				= rm -f
 
 FLAGS			= -Wall -Wextra -Werror
 
-NAME			= megaphone
+NAME			= software
 
-SRCS			= megaphone.cpp
+SRCS			= 	Contact.cpp\
+					PhoneBook.cpp\
 
 OBJS			= $(SRCS:.cpp=.o)
 
