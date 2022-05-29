@@ -1,22 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: zchbani <zchbani@student.1337.ma>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 09:54:38 by zchbani           #+#    #+#             */
-/*   Updated: 2022/05/11 09:56:09 by zchbani          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+#include <iostream>
+#include <iomanip> 
+#include "Contact.hpp"
 
-# include <iostream>
-
-class PhoneBook {
+class PhoneBook{
+    private:
+        Contact contacts[8];
     
-}
+    public:
+        int size;
+        PhoneBook(void);
+        ~PhoneBook(void);
+        void        add(Contact contact);
+        void        search(int index);
+        void        print(Contact contact);
+        void        printPhoneBook();
+        void        exitPhoneBook();
+};
 
 #endif
