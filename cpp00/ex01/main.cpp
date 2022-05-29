@@ -8,15 +8,15 @@ void    addContact(PhoneBook &phonebook){
     std::string  phone;
     std::string  darkest_secret;
 
-    std::cout << "First name:" ;
+    std::cout << "\033[0;34mFirst name\t:\033[0;37m " ;
     std::cin >> first_name;
-    std::cout << "Last name: :" ;
+    std::cout << "\033[0;34mLast name\t:\033[0;37m " ;
     std::cin >> last_name;
-    std::cout << "Nickname :" ;
+    std::cout << "\033[0;34mNickname\t:\033[0;37m " ;
     std::cin >> nickname;
-    std::cout << "Phone: " ;
+    std::cout << "\033[0;34mPhone\t\t:\033[0;37m " ;
     std::cin >> phone;
-    std::cout << "Darkest secret :" ;
+    std::cout << "\033[0;34mDarkest secret\t:\033[0;37m " ;
     std::cin >> darkest_secret;
     Contact contact = 
     Contact(first_name,last_name, nickname, phone, darkest_secret);
@@ -61,7 +61,7 @@ void    searchContact(PhoneBook &phonebook)
     if (phonebook.size > 0)
     {
         phonebook.printPhoneBook();
-        std::cout << "Enter the index of the contact you are searching for: ";
+        std::cout << "\033[0;36mEnter the index of the contact you are searching for :\033[0;37m ";
         std::cin >> index;
         if (checkIndex(index))
         {
@@ -83,14 +83,14 @@ int main()
     PhoneBook phonebook = PhoneBook();
     std::string operation;
 
-    std::cout<< "Available operations: "<< "\n";
-    std::cout << "ADD : to add a contact" << "\n";
-    std::cout << "SEARCH : search for a contact" << "\n";
-    std::cout << "EXIT: to quit" <<"\n";
-    std::cout << "Welcome to your phoneBook, ";
+    std::cout << "\033[0;34mWelcome to your PhoneBook!\033[0;37m" << "\n";
+    std::cout<< "Available operations are : "<< "\n";
+    std::cout << "\033[0;31mADD ~ add :\033[0;37m to add a contact." << "\n";
+    std::cout << "\033[0;31mSEARCH ~ search :\033[0;37m search for a contact." << "\n";
+    std::cout << "\033[0;31mEXIT ~ exit :\033[0;37m to quit the program." <<"\n";
     while (1)
     {
-        std::cout << "what is your operation: ";
+        std::cout << "\033[0;32mWhat is your operation:\033[0;37m ";
         std::cin >> operation;
         if ((operation == "ADD") || (operation == "add"))
            addContact(phonebook);

@@ -30,11 +30,11 @@ void PhoneBook::add(Contact contact)
 }
 
 void PhoneBook::search(int index){
-    std::cout << "First Name:" <<  contacts[index].getFirstName() << "\n";
-    std::cout << "Last Name:" <<  contacts[index].getLastName() << "\n";
-    std::cout << "NickName:" <<  contacts[index].getNickName() << "\n";
-    std::cout << "Phone Number:" <<  contacts[index].getPhoneNumber() << "\n";
-    std::cout << "Darkest Secret:" <<  contacts[index].getDarkestSecret() << "\n";
+    std::cout << "\033[0;31mFirst name\t :\033[0;37m " <<  contacts[index].getFirstName() << "\n";
+    std::cout << "\033[0;31mLast name\t :\033[0;37m " <<  contacts[index].getLastName() << "\n";
+    std::cout << "\033[0;31mNickname\t :\033[0;37m " <<  contacts[index].getNickName() << "\n";
+    std::cout << "\033[0;31mPhone\t\t :\033[0;37m " <<  contacts[index].getPhoneNumber() << "\n";
+    std::cout << "\033[0;31mDarkest secret\t :\033[0;37m " <<  contacts[index].getDarkestSecret() << "\n";
 }
 
 std::string   printField(std::string str){
@@ -48,23 +48,24 @@ void    PhoneBook::printPhoneBook()
     int i;
 
     i = 0;
-    std::cout << "---------------------------------------------" << "\n";
-    std::cout << "|index     |first name|last name |nickname  |" <<"\n";
+    std::cout << "\033[0;32m" <<  "---------------------------------------------" << "\033[0;37m" << "\n";
+    std::cout << "\033[0;32m" << "|   index  |first name|last name | nickname |" << "\033[0;37m" << "\n";
     while(i < PhoneBook::size)
     {
-        std::cout << "|" << i << std::setw(10)<<"|";
+        std::cout << "\033[0;32m" << "|" << "\033[0;37m" << std::setw(10) << i << "\033[0;32m" << "|" << "\033[0;37m";
         std::cout << std::setw(10);
-        std::cout << printField(contacts[i].getFirstName()) << "|";
+        std::cout << printField(contacts[i].getFirstName()) << "\033[0;32m" << "|" << "\033[0;37m";
         std::cout << std::setw(10);
-        std::cout << printField(contacts[i].getLastName()) << "|";
+        std::cout << printField(contacts[i].getLastName()) << "\033[0;32m" << "|" << "\033[0;37m";
         std::cout << std::setw(10);
-        std::cout << printField(contacts[i].getNickName()) << "|" << "\n";
+        std::cout << printField(contacts[i].getNickName()) << "\033[0;32m" << "|\n" << "\033[0;37m";
         i++;
     }
+    std::cout << "\033[0;32m" << "---------------------------------------------" << "\033[0;37m" << "\n";
 }
 
 void        PhoneBook::exitPhoneBook()
 {
-    std::cout << "the program has exit\n";
+    std::cout << "\033[0;36mTHE PROGRAM HAS EXIT\033[0;37m\n";
     exit(0);
 }
